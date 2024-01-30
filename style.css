@@ -1,0 +1,112 @@
+ *,
+*::before,
+*::after{ 
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'league spartan',sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    /* //angrey tool for grident */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(231deg, rgba(22, 6, 40, 1) 0%, rgba(52, 28, 79, 1)50%, rgba(88, 7, 125, 1)100%);
+} 
+.container{
+    width: 90%;
+    max-width: 450px;
+}
+.display-container{
+    position: relative;
+    background-color: rgb(19, 9, 19);
+    border-radius: 1rem;
+    border-bottom: 0.35 solid var(black);
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+    
+}
+ .display{
+    width: 100%;
+     background-color: transparent;
+   border: none;
+    padding:1.15rem 1rem ;
+    color: yellow;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem; 
+}
+.display::placeholder{
+    position: absolute;
+    top: 20%;
+    left: 0.5rem;
+    line-height: 30px;
+    color: yellow;
+    opacity: 0.65;
+    text-transform: uppercase ;
+    
+} 
+.display-container button{
+    position: absolute;
+    top: 50%;
+    right: 1.3rem;
+    transform: translateY(-50%);
+}
+
+.input-container{
+    width: 100%;
+    background-color: black;
+    border-radius: 1rem;
+    padding: 2rem;
+   }
+   .length-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+   }
+   .length-container p:nth-child(1){
+     color: white;
+    font-size: 1.5rem;
+   }
+   .length-container p:nth-child(2){
+    color: yellow;
+    font-size: 1.5rem;
+   }
+   .strength-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.745rem;
+    margin-bottom: 1.2rem;
+   }
+   .strength-container p{
+    color: white;
+    font-size: 1.5rem;
+
+   }
+   .indicator{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+   }
+
+   .generateButton{
+    width: 100%;
+    padding: 1rem 0;
+    background-color: violet;
+    text-align: center;
+    border-radius: 0.75rem;
+    border-bottom: 0.35rem solid violet;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: yellow;
+    font-weight: 600;
+    font-size: 1.25rem;
+}

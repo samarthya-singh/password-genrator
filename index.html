@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .check{
+             display: flex; 
+             align-items: center;
+             margin:1rem 0;
+             gap: 0 1rem;
+
+      }
+      .check input{
+       
+         /* it disapper a default property */
+         appearance: none; 
+        width: 20px;
+        height: 20px;
+        border: 1px solid aqua;
+        cursor: pointer;
+        position: relative;
+        border-radius: 0.35rem;
+
+      }
+      .check input:checked{
+        background-color: aquamarine;
+      }
+      .check input:checked::before{
+        content:'✓';
+        position: absolute;
+        color: rgb(125, 15, 15);
+        font-size: 1.05rem;
+        font-weight: 600;
+        left: 50%;
+        top: -3.5px;
+        transform: translateX(-50%) translateY(10%);
+       
+      }
+      .check label{
+        color: white;
+        font-size: 1.5rem;
+
+      }
+      .slider{
+        appearance: none;
+        width: 100%;
+        height: 1.05rem;
+        border-radius:1.5rem ;
+        cursor: pointer;
+        background-color: violet;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        
+      }
+      .slider::-webkit-slider-thumb{
+        appearance: none;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        background-color: yellow;
+        
+      }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Password Generator</h1>
+
+        <div class="display-container">
+
+            <input readonly placeholder="Password" class="display" data-passwordDisplay>
+
+            <button data-copy>
+                <span data-copyMsg></span>
+                <img src="copy.svg" alt="copy" width="23" height="23">
+            </button>
+
+        </div>
+
+
+        <div class="input-container">
+
+            <!--password length section-->
+            <div class="length-container">
+                <p>Password Length</p>
+                <p data-lengthNumber>0</p>
+            </div>
+
+            <!--slider-->
+            <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider>
+
+            <!-- checkboxes--> 
+            <div class="check">
+                <input type="checkbox" id="uppercase">
+                <label for="uppercase">Includes Uppercase letters</label>
+            </div>
+
+            <div class="check">
+                <input type="checkbox" id="lowercase">
+                <label for="lowercase">Includes Lowercase letters</label>
+            </div>
+
+            <div class="check">
+                <input type="checkbox" id="numbers">
+                <label for="numbers">Includes Numbers </label>
+            </div>
+
+            <div class="check">
+                <input type="checkbox" id="symbols">
+                <label for="symbols">Includes Symbols </label>
+            </div>
+
+            <!-- strength section-->
+            <div class="strength-container">
+                <p>Strength</p>
+                <div class="indicator" data-indicator></div>
+            </div>
+
+            <!-- generate password-->
+            <button class="generateButton">Generate Password</button>
+
+        </div>
+
+    </div>
+    <script src="java.js"></script>
+</body>
+</html>
